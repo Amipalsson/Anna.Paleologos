@@ -1,0 +1,137 @@
+
+
+
+body {
+ background: url(12_col.gif)center top repeat-y;
+	background-size:90%;
+     padding:10px;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+    .wrapper > * {
+        border: 2px solid black;
+        height:150px;
+        padding: 10px;
+    }
+
+
+.wrapper {
+  display: grid;
+  width: 1650px;
+  height: 200px;
+  margin-left:80px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 100px;
+  grid-gap: 5px;
+  grid-template-areas:
+      "header header header header"
+      "left  main  main  right"
+      "content  content content side"
+      "footer footer footer footer";
+}
+
+
+.cell-1 {
+  grid-area: header;
+  
+}
+
+.cell-2{
+  grid-area:left;
+  column:;
+}
+.cell-3{
+  grid-area:main;
+}
+.cell-4{
+  grid-area:right;
+}
+.cell-5{
+  grid-area:content;
+}
+.cell-6{
+  grid-area:side;
+}
+.cell-7{
+  grid-area:footer;
+}
+
+   
+.cell-7 {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-column-gap: 1rem;
+}
+
+.cell-7 .cell {
+   border:2px solid black;
+}
+/*Större skärmar*/
+@media  (min-width:1280px){
+      .wrapper{
+      display:grid;
+      margin:60px;
+      height:50px;
+      grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr ;
+      grid-template-rows: auto 1fr ;
+      grid-template-areas:
+        "header header header header header"
+        "left main  main   main right"
+        "content content content  side side"
+        "footer footer footer footer footer";
+    }
+}
+
+ /*Ipad Pro 12.9*/
+  @media  (max-width: 1024px){
+    .wrapper{
+      width:1350px;
+      display:grid;
+      margin:50px;
+      height:50px;
+      grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr ;
+      grid-template-rows: auto 1fr ;
+      grid-template-areas:
+        "header header header header"
+        "left main  main right"
+        "content content content side"
+        "footer footer footer footer";
+    }
+}
+
+/*Ipad*/
+  @media (max-width: 768px){
+    .wrapper{
+      display:grid;
+      margin:30px;
+      height:50px;
+      grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr  ;
+      grid-template-rows: auto 1fr ;
+      grid-template-areas:
+        "header header header"
+        "left main right"
+        "content content side"
+        "footer footer footer";
+    }
+  }
+
+/*mobil*/
+  @media (max-width: 560px){
+    .wrapper{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: 
+        "header"
+        "left"
+        "main"
+        "right"
+        "content"
+        "side"
+        "footer";
+    }
+  }
